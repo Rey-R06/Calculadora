@@ -1,4 +1,3 @@
-var result = document.getElementById("resultado");
 var simbolo = document.getElementById("simbolo");
 var nu2 = document.getElementById("num2");
 var nu1 = document.getElementById("num1");
@@ -66,7 +65,10 @@ function resultad() {
             resultado = num1 + num2;
             break;
     }
-    result.innerHTML = "=  "+resultado.toFixed(2);
+    
+    simbolo.innerHTML = ""; 
+    nu2.value ="" ;
+    nu1.value = Math.round(resultado * 100) / 100;
 }
 function borrar(n) {
     switch (n) {
@@ -74,7 +76,6 @@ function borrar(n) {
             nu1.value ="";
             nu2.value ="" ;
             simbolo.innerHTML = "";  
-            result.innerHTML = "";
             break;
         case 2:
              let valor = nu2.value;
@@ -86,9 +87,7 @@ function borrar(n) {
                     }else{
                         if (result.innerHTML == "") {
                           nu2.value = valor.substring(0, valor.length - 1); 
-                        } else {
-                            result.innerHTML = "";
-                        }
+                        } 
                     }
                 }
              
@@ -99,6 +98,7 @@ function borrar(n) {
     }
     
 }
+var color =1;
 
 function cambioColor() {
     let fondo = document.getElementById("body");
@@ -112,7 +112,6 @@ function cambioColor() {
     nu2.style.cssText =" background-color: white; color: black;";
     nu1.style.cssText =" background-color: white; color: black;";
     simbolo.style.cssText ="color: black;";
-    result.style.cssText =" color: black;";
     color =0; 
     } else {
     fondo.style.cssText = "color: white; background-color: black;"; 
@@ -121,7 +120,6 @@ function cambioColor() {
     nu2.style.cssText =" background-color: black; color: white;";
     nu1.style.cssText =" background-color: black; color: white;";
     simbolo.style.cssText ="color: white;  background: black;";
-    result.style.cssText =" color: white;  background: black;" ;
     color =1;
     }
 
