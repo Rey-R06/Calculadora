@@ -85,9 +85,7 @@ function borrar(n) {
                     if (nu2.value == "") {
                         simbolo.innerHTML = "";
                     }else{
-                        if (result.innerHTML == "") {
                           nu2.value = valor.substring(0, valor.length - 1); 
-                        } 
                     }
                 }
              
